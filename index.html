@@ -1,1 +1,327 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevOps Engineer · Online CV</title>
+  <meta name="description" content="Professional DevOps Engineer online CV – responsive, printable, dark-mode, and ATS-friendly." />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#0d6efd; /* Bootstrap primary */
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--bs-body-bg)}
+    /* Card look */
+    .soft-card{border:1px solid var(--bs-border-color); border-radius:1rem; box-shadow:0 6px 20px rgba(0,0,0,.06)}
+    .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid rgba(13,110,253,.2)}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--bs-border-color);border-radius:999px;padding:.25rem .6rem;font-size:.85rem}
+    .chip i{font-size:1rem}
+    .timeline{position:relative;padding-left:1.5rem}
+    .timeline::before{content:"";position:absolute;left:.25rem;top:.25rem;bottom:.25rem;width:2px;background:var(--bs-border-color)}
+    .timeline-item{position:relative;margin-bottom:1.25rem}
+    .timeline-item::before{content:"";position:absolute;left:-.45rem;top:.35rem;width:.7rem;height:.7rem;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px rgba(13,110,253,.15)}
+    .skill-bar{height:.6rem;background:var(--bs-border-color);border-radius:999px;overflow:hidden}
+    .skill-bar > span{display:block;height:100%;background:var(--accent)}
+    .link-underline{position:relative}
+    .link-underline::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .25s ease}
+    .link-underline:hover::after{width:100%}
+    @media print{
+      .no-print{display:none !important}
+      .soft-card{box-shadow:none}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">DevOps · Your Name</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <button id="btnTheme" class="btn btn-outline-secondary btn-sm" type="button"><i class="bi bi-moon-stars me-1"></i>Toggle theme</button>
+          <button class="btn btn-primary btn-sm" onclick="window.print()" type="button"><i class="bi bi-printer me-1"></i>Print / PDF</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 bg-body">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-md-auto text-center text-md-start">
+          <!-- Replace src with your photo or keep placeholder -->
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile photo placeholder" />
+        </div>
+        <div class="col">
+          <h1 class="display-6 mb-1">Your Name</h1>
+          <p class="lead text-secondary mb-2">Senior DevOps Engineer · Cloud | CI/CD | SRE</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="chip"><i class="bi bi-geo-alt"></i> Stockholm, Sweden</span>
+            <a href="#" class="chip text-decoration-none"><i class="bi bi-linkedin"></i> linkedin.com/in/username</a>
+            <a href="#" class="chip text-decoration-none"><i class="bi bi-github"></i> github.com/username</a>
+            <button id="copyEmail" class="chip btn btn-light btn-sm" type="button" title="Copy email to clipboard"><i class="bi bi-envelope"></i> you@example.com</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pb-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Left column -->
+        <section class="col-12 col-lg-8">
+          <div id="about" class="soft-card p-4 mb-4">
+            <h2 class="h4 mb-3"><i class="bi bi-person-badge me-2"></i>About</h2>
+            <p class="mb-0">DevOps engineer with 7+ years building scalable infrastructures and high‑velocity delivery pipelines. Specialised in <strong>AWS</strong>, <strong>Kubernetes</strong>, <strong>Terraform</strong>, and <strong>observability</strong>. Passionate about developer experience, cost optimisation, and reliability engineering.</p>
+          </div>
+
+          <div id="experience" class="soft-card p-4 mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h2 class="h4 mb-0"><i class="bi bi-briefcase me-2"></i>Experience</h2>
+              <div class="input-group input-group-sm w-auto no-print" style="min-width:260px">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input id="filterInput" type="text" class="form-control" placeholder="Filter by keyword (e.g., AWS, k8s)" />
+              </div>
+            </div>
+            <div id="expList" class="timeline">
+              <!-- Experience item -->
+              <article class="timeline-item" data-tags="aws kubernetes terraform argo cd sre">
+                <div class="d-flex flex-wrap justify-content-between align-items-start">
+                  <div>
+                    <h3 class="h6 mb-1">Senior DevOps Engineer · TechCorp</h3>
+                    <p class="text-secondary mb-1">Stockholm · Full‑time</p>
+                  </div>
+                  <div class="text-nowrap small text-secondary">2022 – Present</div>
+                </div>
+                <ul class="mb-3">
+                  <li>Designed multi‑account <strong>AWS</strong> landing zone with <strong>Terraform</strong> and Control Tower.</li>
+                  <li>Implemented GitOps with <strong>Argo CD</strong> on EKS; reduced lead time by 45%.</li>
+                  <li>Introduced SLOs, <strong>Prometheus/Grafana</strong>, and on‑call automation (PagerDuty).</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="chip"><i class="bi bi-cloud"></i> AWS</span>
+                  <span class="chip"><i class="bi bi-box-seam"></i> Kubernetes</span>
+                  <span class="chip"><i class="bi bi-code-slash"></i> Terraform</span>
+                  <span class="chip"><i class="bi bi-diagram-3"></i> Argo CD</span>
+                </div>
+              </article>
+
+              <article class="timeline-item" data-tags="azure aks bicep cicd github actions security">
+                <div class="d-flex flex-wrap justify-content-between align-items-start">
+                  <div>
+                    <h3 class="h6 mb-1">DevOps Engineer · FinEdge</h3>
+                    <p class="text-secondary mb-1">Remote · Full‑time</p>
+                  </div>
+                  <div class="text-nowrap small text-secondary">2019 – 2022</div>
+                </div>
+                <ul class="mb-3">
+                  <li>Built secure Azure AKS platform with <strong>Bicep</strong> + GitHub Actions.</li>
+                  <li>Migrated monolith to microservices; release frequency x3.</li>
+                  <li>Rolled out <strong>OPA/Gatekeeper</strong> policies and container scanning.</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="chip"><i class="bi bi-cloud"></i> Azure</span>
+                  <span class="chip"><i class="bi bi-box-seam"></i> AKS</span>
+                  <span class="chip"><i class="bi bi-git"></i> GitHub Actions</span>
+                  <span class="chip"><i class="bi bi-shield-check"></i> Security</span>
+                </div>
+              </article>
+
+              <article class="timeline-item" data-tags="docker jenkins ansible onprem monitoring">
+                <div class="d-flex flex-wrap justify-content-between align-items-start">
+                  <div>
+                    <h3 class="h6 mb-1">Site Reliability Engineer · DataFlux</h3>
+                    <p class="text-secondary mb-1">Gothenburg · Full‑time</p>
+                  </div>
+                  <div class="text-nowrap small text-secondary">2017 – 2019</div>
+                </div>
+                <ul class="mb-3">
+                  <li>Built on‑prem Kubernetes (RKE) with <strong>Jenkins</strong> CI and <strong>Ansible</strong>.</li>
+                  <li>Introduced blue/green deployments for low‑downtime releases.</li>
+                  <li>Set up elastic monitoring stack (Prometheus, Loki) and alerting.</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="chip"><i class="bi bi-box"></i> Docker</span>
+                  <span class="chip"><i class="bi bi-gear"></i> Jenkins</span>
+                  <span class="chip"><i class="bi bi-diagram-3"></i> Ansible</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div id="projects" class="soft-card p-4 mb-4">
+            <h2 class="h4 mb-3"><i class="bi bi-kanban me-2"></i>Projects</h2>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="border rounded-4 p-3 h-100">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <h3 class="h6 mb-2">Platform as Product</h3>
+                    <a href="#" class="link-underline small">Repo <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <p class="mb-2">Internal developer platform using Backstage, Argo CD, and Golden Paths; reduced service bootstrap time from days to minutes.</p>
+                  <div class="d-flex flex-wrap gap-2"><span class="chip">Backstage</span><span class="chip">Argo</span><span class="chip">EKS</span></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="border rounded-4 p-3 h-100">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <h3 class="h6 mb-2">Cost Guard</h3>
+                    <a href="#" class="link-underline small">Live <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <p class="mb-2">FinOps dashboards + anomaly alerts using AWS CUR, Athena, and QuickSight; monthly savings ~18%.</p>
+                  <div class="d-flex flex-wrap gap-2"><span class="chip">Athena</span><span class="chip">QuickSight</span><span class="chip">Lambda</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right column -->
+        <aside class="col-12 col-lg-4">
+          <div id="skills" class="soft-card p-4 mb-4">
+            <h2 class="h5 mb-3"><i class="bi bi-tools me-2"></i>Key Skills</h2>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small"><span>AWS</span><span>Advanced</span></div>
+              <div class="skill-bar"><span style="width:90%"></span></div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small"><span>Kubernetes</span><span>Advanced</span></div>
+              <div class="skill-bar"><span style="width:88%"></span></div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small"><span>Terraform / IaC</span><span>Advanced</span></div>
+              <div class="skill-bar"><span style="width:85%"></span></div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small"><span>CI/CD (GitHub Actions, Jenkins)</span><span>Advanced</span></div>
+              <div class="skill-bar"><span style="width:84%"></span></div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small"><span>Observability (Prometheus, Grafana)</span><span>Advanced</span></div>
+              <div class="skill-bar"><span style="width:82%"></span></div>
+            </div>
+            <div class="mt-3">
+              <span class="badge text-bg-light border">Python</span>
+              <span class="badge text-bg-light border">Go</span>
+              <span class="badge text-bg-light border">Bash</span>
+              <span class="badge text-bg-light border">Linux</span>
+              <span class="badge text-bg-light border">SRE</span>
+              <span class="badge text-bg-light border">FinOps</span>
+            </div>
+          </div>
+
+          <div id="education" class="soft-card p-4 mb-4">
+            <h2 class="h5 mb-3"><i class="bi bi-mortarboard me-2"></i>Education</h2>
+            <div>
+              <div class="fw-semibold">M.Sc. in Computer Science</div>
+              <div class="text-secondary small">KTH Royal Institute of Technology · 2015 – 2017</div>
+            </div>
+            <hr>
+            <div>
+              <div class="fw-semibold">B.Sc. in Software Engineering</div>
+              <div class="text-secondary small">University of Tehran · 2011 – 2015</div>
+            </div>
+          </div>
+
+          <div id="certs" class="soft-card p-4 mb-4">
+            <h2 class="h5 mb-3"><i class="bi bi-award me-2"></i>Certifications</h2>
+            <ul class="mb-0">
+              <li>AWS Certified DevOps Engineer – Professional</li>
+              <li>CKA – Certified Kubernetes Administrator</li>
+              <li>HashiCorp Terraform Associate</li>
+            </ul>
+          </div>
+
+          <div id="contact" class="soft-card p-4">
+            <h2 class="h5 mb-3"><i class="bi bi-send me-2"></i>Contact</h2>
+            <form class="row g-2" onsubmit="event.preventDefault(); alert('Thanks! This demo does not send emails.');">
+              <div class="col-12">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" class="form-control" placeholder="Your name" required>
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email" class="form-control" placeholder="you@example.com" required>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-control" rows="3" placeholder="Hello! I'd like to connect..." required></textarea>
+              </div>
+              <div class="col-12 d-grid">
+                <button class="btn btn-primary" type="submit"><i class="bi bi-rocket-takeoff me-1"></i>Send</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container small text-secondary d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span>© <span id="year"></span> Your Name</span>
+      <span>Printable · Dark mode · ATS-friendly</span>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // Active year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark / Light theme toggle (uses Bootstrap data attributes)
+    const btn = document.getElementById('btnTheme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const setTheme = (mode) => {
+      document.documentElement.setAttribute('data-bs-theme', mode);
+      localStorage.setItem('theme', mode);
+    };
+    const saved = localStorage.getItem('theme');
+    setTheme(saved || (prefersDark ? 'dark' : 'light'));
+    btn.addEventListener('click', ()=> setTheme(document.documentElement.getAttribute('data-bs-theme')==='dark'?'light':'dark'));
+
+    // Copy email quick action
+    document.getElementById('copyEmail').addEventListener('click', (e)=>{
+      const email = e.currentTarget.textContent.trim();
+      navigator.clipboard.writeText(email).then(()=>{
+        e.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i> copied!';
+        setTimeout(()=> e.currentTarget.innerHTML = '<i class="bi bi-envelope"></i> you@example.com', 1200);
+      });
+    });
+
+    // Experience filter
+    const filterInput = document.getElementById('filterInput');
+    const items = Array.from(document.querySelectorAll('#expList .timeline-item'));
+    filterInput.addEventListener('input', ()=>{
+      const q = filterInput.value.toLowerCase().trim();
+      items.forEach(it=>{
+        const tags = (it.getAttribute('data-tags')||'') + ' ' + it.textContent.toLowerCase();
+        it.style.display = tags.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
