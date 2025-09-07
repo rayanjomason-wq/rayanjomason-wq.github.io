@@ -1,193 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohammad Reza Heydari - Resume</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-    section {
-      padding: 20px;
-      margin: 10px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    form input, form textarea, form button {
-      margin: 5px 0;
-      padding: 10px;
-      font-size: 1rem;
-    }
-    form button {
-      background: #2c3e50;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    .lang {
-      display: none;
-    }
-    .lang.active {
-      display: inline;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Reza Heydari - CV</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+:root{
+  --primary-color:#0d6efd;
+}
+body{background:#f5f5f5;font-family:Arial, sans-serif;}
+.card{border-radius:1rem; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+header{padding:2rem 1rem; text-align:center;}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid rgba(13,110,253,.2);}
+.lang{display:none;}
+.lang.active{display:inline;}
+nav button{margin:0 0.2rem;}
+@media print{
+  nav, .btn-print{display:none;}
+  body{background:#fff;}
+  .card{box-shadow:none;}
+}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>
+<header class="bg-white mb-4">
+  <img class="avatar mb-2" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile">
+  <h1 class="mb-1">
     <span class="lang en active">Mohammad Reza Heydari</span>
     <span class="lang sv">Mohammad Reza Heydari</span>
     <span class="lang fa">محمدرضا حیدری</span>
   </h1>
-  <p>
-    <span class="lang en active">Network Engineer & Web Developer</span>
-    <span class="lang sv">Nätverksingenjör & Webbutvecklare</span>
-    <span class="lang fa">مهندس شبکه و طراح وب</span>
+  <p class="mb-2">
+    <span class="lang en active">Junior Network & Support Technician</span>
+    <span class="lang sv">Junior Nätverk & Supporttekniker</span>
+    <span class="lang fa">تکنسین شبکه و پشتیبانی جونیور</span>
   </p>
-  <nav>
-    <button onclick="setLanguage('en')">🇬🇧 English</button>
-    <button onclick="setLanguage('sv')">🇸🇪 Svenska</button>
-    <button onclick="setLanguage('fa')">🇮🇷 فارسی</button>
+  <p>
+    +46 767 0109 85 • MohammadRezaHeydari.se@gmail.com • Stockholm
+  </p>
+  <nav class="mb-2">
+    <button class="btn btn-outline-primary btn-sm" onclick="setLanguage('en')">🇬🇧 English</button>
+    <button class="btn btn-outline-primary btn-sm" onclick="setLanguage('sv')">🇸🇪 Svenska</button>
+    <button class="btn btn-outline-primary btn-sm" onclick="setLanguage('fa')">🇮🇷 فارسی</button>
+    <button class="btn btn-secondary btn-sm btn-print" onclick="window.print()"><i class="bi bi-printer"></i> Print / PDF</button>
   </nav>
 </header>
 
-<section>
-  <h2>
-    <span class="lang en active">About Me</span>
-    <span class="lang sv">Om mig</span>
-    <span class="lang fa">درباره من</span>
-  </h2>
-  <p>
-    <span class="lang en active">I am an experienced network engineer and web designer with a passion for creating modern and efficient IT solutions. Skilled in networking, programming, and security.</span>
-    <span class="lang sv">Jag är en erfaren nätverksingenjör och webbutvecklare med passion för att skapa moderna och effektiva IT-lösningar. Kompetent inom nätverk, programmering och säkerhet.</span>
-    <span class="lang fa">من یک مهندس شبکه و طراح وب با تجربه هستم که به ساخت راهکارهای مدرن و کارآمد IT علاقه دارم. در زمینه شبکه، برنامه‌نویسی و امنیت مهارت دارم.</span>
-  </p>
-</section>
+<div class="container">
+  <!-- About Me -->
+  <section class="card p-4 mb-4">
+    <h2>
+      <span class="lang en active">About Me</span>
+      <span class="lang sv">Om mig</span>
+      <span class="lang fa">درباره من</span>
+    </h2>
+    <p>
+      <span class="lang en active">
+        Junior network and support technician with experience in designing, implementing, and troubleshooting networks, servers, and IT solutions. Skilled in Windows, Linux, Cisco, virtualization, and programming.
+      </span>
+      <span class="lang sv">
+        Junior nätverks- och supporttekniker med erfarenhet av att designa, implementera och felsöka nätverk, servrar och IT-lösningar. Kompetent i Windows, Linux, Cisco, virtualisering och programmering.
+      </span>
+      <span class="lang fa">
+        تکنسین شبکه و پشتیبانی جونیور با تجربه در طراحی، پیاده‌سازی و رفع مشکلات شبکه، سرور و راهکارهای IT. مهارت در Windows، Linux، Cisco، مجازی‌سازی و برنامه‌نویسی.
+      </span>
+    </p>
+  </section>
 
-<section>
-  <h2>
-    <span class="lang en active">Experience</span>
-    <span class="lang sv">Erfarenhet</span>
-    <span class="lang fa">تجربه کاری</span>
-  </h2>
-  <ul>
-    <li>
-      <span class="lang en active"><strong>Kev Teknik AB</strong> – Network Engineer (Sweden)</span>
-      <span class="lang sv"><strong>Kev Teknik AB</strong> – Nätverksingenjör (Sverige)</span>
-      <span class="lang fa"><strong>Kev Teknik AB</strong> – مهندس شبکه (سوئد)</span>
-    </li>
-    <li>
-      <span class="lang en active"><strong>Asia Tech Central Office</strong> – Senior IT Engineer</span>
-      <span class="lang sv"><strong>Asia Tech Central Office</strong> – Senior IT-ingenjör</span>
-      <span class="lang fa"><strong>Asia Tech Central Office</strong> – مهندس ارشد IT</span>
-    </li>
-    <li>
-      <span class="lang en active"><strong>Asia Tech Mehrkontor</strong> – IT Specialist</span>
-      <span class="lang sv"><strong>Asia Tech Mehrkontor</strong> – IT-specialist</span>
-      <span class="lang fa"><strong>Asia Tech Mehrkontor</strong> – کارشناس IT</span>
-    </li>
-  </ul>
-</section>
+  <!-- Experience -->
+  <section class="card p-4 mb-4">
+    <h2>
+      <span class="lang en active">Experience</span>
+      <span class="lang sv">Erfarenhet</span>
+      <span class="lang fa">تجربه کاری</span>
+    </h2>
+    <div class="mb-3">
+      <h5>KEV TEKNIK AB, Stockholm</h5>
+      <p><em>Junior Web Designer (APL) – 01 March 2024 – Present</em></p>
+      <ul>
+        <li>Designed and developed company's WordPress website using HTML, CSS, Bootstrap, and JavaScript.</li>
+        <li>Integrated social media connections and optimized user experience.</li>
+      </ul>
+    </div>
+    <div class="mb-3">
+      <h5>Asia Tech Central Office, Shiraz</h5>
+      <p><em>Junior Support Technician – 01 May 2019 – 29 March 2020</em></p>
+      <ul>
+        <li>Configured and installed wireless modems and network devices.</li>
+        <li>Provided software installation and support for users.</li>
+      </ul>
+    </div>
+    <div class="mb-3">
+      <h5>Asia Tech Mehrkontor, Shiraz</h5>
+      <p><em>Junior Support Technician – 01 February 2016 – 29 April 2019</em></p>
+      <ul>
+        <li>Technical support for networks and internet connections.</li>
+        <li>Software support (Windows onsite and remote) and security support.</li>
+        <li>Daily troubleshooting of DNS, Apache servers, and network hardware.</li>
+      </ul>
+    </div>
+  </section>
 
-<section>
-  <h2>
-    <span class="lang en active">Education</span>
-    <span class="lang sv">Utbildning</span>
-    <span class="lang fa">تحصیلات</span>
-  </h2>
-  <ul>
-    <li>Jensen – IT & Networking</li>
-    <li>Tosinso – Security Training</li>
-    <li>IMI – Networking & Programming</li>
-    <li>Aptech – Web Development</li>
-  </ul>
-</section>
+  <!-- Education -->
+  <section class="card p-4 mb-4">
+    <h2>
+      <span class="lang en active">Education</span>
+      <span class="lang sv">Utbildning</span>
+      <span class="lang fa">تحصیلات</span>
+    </h2>
+    <ul>
+      <li>Tosinso – Microsoft Azure Fundamental & Administrator (2024)</li>
+      <li>Jensen, Stockholm – Network Technician & Computer Technology (2022–2024)</li>
+      <li>Industrial Management Institute, Shiraz – Fullstack Web Developer (2016)</li>
+      <li>Aptech, Shiraz – ACCP I7, Programming & Web Design (2008–2013)</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>
-    <span class="lang en active">Skills</span>
-    <span class="lang sv">Kompetens</span>
-    <span class="lang fa">مهارت‌ها</span>
-  </h2>
-  <ul>
-    <li>Networking (Cisco, Mikrotik, Windows, Linux)</li>
-    <li>Programming (Python, Rust, Bash, Web Development)</li>
-    <li>Security & Firewalls</li>
-    <li>Teamwork & Communication</li>
-  </ul>
-</section>
+  <!-- Skills -->
+  <section class="card p-4 mb-4">
+    <h2>
+      <span class="lang en active">Skills</span>
+      <span class="lang sv">Kompetens</span>
+      <span class="lang fa">مهارت‌ها</span>
+    </h2>
+    <ul>
+      <li>Windows 7–11, Server 2003–2022 (AD, DHCP, DNS, MS SQL, IIS)</li>
+      <li>Linux Ubuntu 2022, Server 2022 (Apache, Nginx, DNS)</li>
+      <li>Cisco CCNA, CCNP – Routing & Switching Protocols</li>
+      <li>Security: VPN, SSH, Firewall (Fortigate, ASA), IDS/IPS</li>
+      <li>Scripting: Bash & PowerShell</li>
+      <li>Programming: PHP, Laravel, Python, Django, Java, JS, HTML5, CSS3, Bootstrap</li>
+      <li>Virtualization: VMware & VirtualBox</li>
+      <li>Soft skills: Communication, Customer Service, Teamwork, Flexibility, Time Management, Empathy</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>
-    <span class="lang en active">Languages</span>
-    <span class="lang sv">Språk</span>
-    <span class="lang fa">زبان‌ها</span>
-  </h2>
-  <ul>
-    <li><span class="lang en active">Swedish – Intermediate</span><span class="lang sv">Svenska – Mellannivå</span><span class="lang fa">سوئدی – متوسط</span></li>
-    <li><span class="lang en active">English – Fluent</span><span class="lang sv">Engelska – Flytande</span><span class="lang fa">انگلیسی – روان</span></li>
-    <li><span class="lang en active">Persian – Native</span><span class="lang sv">Persiska – Modersmål</span><span class="lang fa">فارسی – زبان مادری</span></li>
-  </ul>
-</section>
+  <!-- Languages -->
+  <section class="card p-4 mb-4">
+    <h2>
+      <span class="lang en active">Languages</span>
+      <span class="lang sv">Språk</span>
+      <span class="lang fa">زبان‌ها</span>
+    </h2>
+    <ul>
+      <li>Swedish – Fluent / Svenska – Flytande / سوئدی – روان</li>
+      <li>English – Fluent / Engelska – Flytande / انگلیسی – روان</li>
+      <li>Persian – Native / Persiska – Modersmål / فارسی – زبان مادری</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>
-    <span class="lang en active">Contact Me</span>
-    <span class="lang sv">Kontakta mig</span>
-    <span class="lang fa">تماس با من</span>
-  </h2>
-  <form action="mailto:MohammadRezaHeydari.se@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Name / Namn / نام" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <textarea name="Message" placeholder="Message / Meddelande / پیام" required></textarea>
-    <button type="submit">
-      <span class="lang en active">Send</span>
-      <span class="lang sv">Skicka</span>
-      <span class="lang fa">ارسال</span>
-    </button>
-  </form>
-</section>
+  <!-- Contact -->
+  <section class="card p-4 mb-4">
+    <h2>
+      <span class="lang en active">Contact Me</span>
+      <span class="lang sv">Kontakta mig</span>
+      <span class="lang fa">تماس با من</span>
+    </h2>
+    <form action="mailto:MohammadRezaHeydari.se@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Name / Namn / نام" class="form-control mb-2" required>
+      <input type="email" name="Email" placeholder="Email" class="form-control mb-2" required>
+      <textarea name="Message" placeholder="Message / Meddelande / پیام" class="form-control mb-2" rows="4" required></textarea>
+      <button type="submit" class="btn btn-primary">
+        <span class="lang en active">Send</span>
+        <span class="lang sv">Skicka</span>
+        <span class="lang fa">ارسال</span>
+      </button>
+    </form>
+  </section>
+</div>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => {
-      el.classList.remove('active');
-      if (el.classList.contains(lang)) {
-        el.classList.add('active');
-      }
-    });
-  }
+function setLanguage(lang) {
+  document.querySelectorAll('.lang').forEach(el=>{
+    el.classList.remove('active');
+    if(el.classList.contains(lang)) el.classList.add('active');
+  });
+}
 </script>
-
 </body>
 </html>
